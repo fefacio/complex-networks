@@ -94,34 +94,34 @@ def calculate_general_metrics(G,name,results_dir,estimate_distance=False,estimat
         largest_component = max(nx.connected_components(G), key=len)
         GS = G.subgraph(largest_component).copy()
 
-    # mode = "estimada" if estimate_distance else "exata"
-    # print(f"->calculando distância média ({mode})")
-    # start = time.perf_counter()
-    average_distance = -1
-    # if estimate_distance:
-    #     average_distance = estimate_average_distance(
-    #         GS,
-    #         percentage=1,
-    #         seed=24,
-    #     )
-    # else:
-    #     average_distance = nx.average_shortest_path_length(GS)
+    mode = "estimada" if estimate_distance else "exata"
+    print(f"->calculando distância média ({mode})")
+    start = time.perf_counter()
 
-    # elapsed_minutes = (time.perf_counter() - start) / 60
-    # print(f"->concluído em {elapsed_minutes:.2f} minutos")
+    if estimate_distance:
+        average_distance = estimate_average_distance(
+            GS,
+            percentage=1,
+            seed=24,
+        )
+    else:
+        average_distance = nx.average_shortest_path_length(GS)
+
+    elapsed_minutes = (time.perf_counter() - start) / 60
+    print(f"->concluído em {elapsed_minutes:.2f} minutos")
 
 
-    # mode = "estimado" if estimate_diameter else "exato"
-    # print(f"->calculando diâmetro ({mode})")
-    # start = time.perf_counter()
+    mode = "estimado" if estimate_diameter else "exato"
+    print(f"->calculando diâmetro ({mode})")
+    start = time.perf_counter()
 
-    # if estimate_diameter:
-    #     diameter = approximate_diameter(GS, seed=42)
-    # else:
-    #     diameter = nx.diameter(GS, usebounds=True)
-    diameter = approximate_diameter(GS, seed=42)
-    # elapsed_minutes = (time.perf_counter() - start) / 60
-    # print(f"->concluído em {elapsed_minutes:.2f} minutos")
+    if estimate_diameter:
+        diameter = approximate_diameter(GS, seed=42)
+    else:
+        diameter = nx.diameter(GS, usebounds=True)
+
+    elapsed_minutes = (time.perf_counter() - start) / 60
+    print(f"->concluído em {elapsed_minutes:.2f} minutos")
 
     row = {
         "network": name,
