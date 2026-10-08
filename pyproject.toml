@@ -1,0 +1,17 @@
+[project]
+name = "complex-networks"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Fernando Rossetti", email = "ticorossetti2002@hotmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+complex-networks = "complex_networks:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
