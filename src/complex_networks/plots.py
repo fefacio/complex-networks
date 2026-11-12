@@ -20,7 +20,8 @@ def plot_degree_distribution(degree_counts, output_path, *, title="", log_scale=
         ax.set_yscale("log")
     ax.set_xlabel("Grau k")
     ax.set_ylabel("P(k)")
-    ax.set_title(title)
+    if title is not None:
+        ax.set_title(title)
     ax.grid(True, alpha=0.25)
     fig.tight_layout()
     fig.savefig(output_path, dpi=300)
