@@ -2,8 +2,18 @@ import csv
 from collections import Counter
 from pathlib import Path
 
+import numpy as np
 import networkx as nx
 import time
+
+from math import ceil, isfinite
+from operator import index
+from random import Random
+
+from networkit.community import Modularity, PLM
+from networkit.graph import GraphFromCoo
+from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import dijkstra
 
 from networkx.algorithms.approximation import diameter as approximate_diameter
 
@@ -35,32 +45,70 @@ def get_component_size_distribution(G):
     """Retorna {tamanho: número de componentes}."""
     return Counter(len(component) for component in nx.connected_components(G))
 
-import math
-import random
-import time
-import networkx as nx
 
 
-def estimate_average_distance(G, percentage=1, seed=42):
-    """Estimativa da distância média usando uma amostragem de nós."""
+
+
+def get_modularity(G):
+    """Retorna Q pelo Louvain paralelo para um grafo simples e sem pesos."""
+    m = G.number_of_edges()
+    if m == 0:
+        return None
+
+    n = G.number_of_nodes()
+    node_ids = dict(zip(G, range(n)))
+    edges = np.fromiter(
+        (node_ids[node] for edge in G.edges for node in edge),
+        dtype=np.uint64,
+        count=2 * m,
+    ).reshape(m, 2)
+
+    graph = GraphFromCoo((edges[:, 0], edges[:, 1]), n=n)
+    del node_ids, edges
+
+    partition = PLM(graph, maxIter=8).run().getPartition()
+    return float(Modularity().getQuality(partition, graph))
+
+
+
+
+def estimate_average_distance(G, percentage=1, seed=42, *, max_sources=32):
+    """Estima a distância média em arestas de um grafo conexo e não direcionado."""
     if not 0 < percentage <= 100:
         raise ValueError("percentage deve estar entre 0 e 100.")
 
-    if not nx.is_connected(G):
-        raise ValueError("Use um grafo conexo, como o maior componente.")
+    if max_sources is not None:
+        max_sources = index(max_sources)
+        if max_sources < 1:
+            raise ValueError("max_sources deve ser positivo.")
+
+    if G.is_directed():
+        raise nx.NetworkXNotImplemented("Use um grafo não direcionado.")
 
     n = G.number_of_nodes()
+    if n == 0:
+        raise nx.NetworkXPointlessConcept("O grafo está vazio.")
     if n == 1:
         return 0.0
 
-    sample_size = math.ceil(n * percentage / 100)
-    sources = random.Random(seed).sample(list(G.nodes()), sample_size)
+    sample_size = ceil(n * percentage / 100)
+    if max_sources is not None:
+        sample_size = min(sample_size, max_sources)
+    sources = Random(seed).sample(range(n), sample_size)
 
-    total_distance = 0
+    adjacency = nx.to_scipy_sparse_array(G, dtype=float, weight=None, format="csr")
+    # Usa índices de 32 bits quando cabem, compatíveis com versões antigas do SciPy.
+    adjacency = csr_matrix(
+        (adjacency.data, adjacency.indices, adjacency.indptr), shape=adjacency.shape
+    )
 
+    total_distance = 0.0
     for source in sources:
-        distances = nx.single_source_shortest_path_length(G, source)
-        total_distance += sum(distances.values())
+        distances = dijkstra(adjacency, indices=source, unweighted=True)
+        distance_sum = float(distances.sum())
+        if not isfinite(distance_sum):
+            raise ValueError("Use um grafo conexo, como o maior componente.")
+        total_distance += distance_sum
 
     return total_distance / (sample_size * (n - 1))
 
@@ -86,6 +134,9 @@ def calculate_general_metrics(G,name,results_dir,estimate_distance=False,estimat
     del filtered_cc
 
     transitivity = nx.transitivity(G)
+
+    print("->calculando modularidade (Louvain)")
+    modularity = get_modularity(G)
 
     print("->calculando componentes conexos")
     n_components = nx.number_connected_components(G)
@@ -135,6 +186,8 @@ def calculate_general_metrics(G,name,results_dir,estimate_distance=False,estimat
         "diameter": diameter,
         "density": nx.density(G),
         "n_components": n_components,
+        "modularity": modularity,
     }
     _append_csv(Path(results_dir) / "general_metrics.csv", row)
     return row
+

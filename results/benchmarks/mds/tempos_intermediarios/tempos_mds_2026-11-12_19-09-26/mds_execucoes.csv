@@ -1,0 +1,3 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+38d8d0a009664d209943a8b021ff7527,roadNet-CA,DemDS,13,1965206,2766607,600,cpu,,610.316022474,590032,609.529608313,30017,True,ok,
+930c520140804587942d65e5440f90e5,roadNet-CA,Iterated Greedy,13,1965206,2766607,600,decorrido,0.2,600.377997685,634956,599.791255534,2740,True,ok,

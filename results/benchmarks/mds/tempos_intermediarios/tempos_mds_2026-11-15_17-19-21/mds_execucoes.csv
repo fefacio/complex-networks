@@ -1,0 +1,4 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+49c1d8d98f544fcf9d66234098e4c388,amazon0302,DemDS,13,262111,899792,30,cpu,,33.473555917,35767,33.419461055,2145,True,ok,
+5cffffda285d46449ea8e0178af54003,amazon0302,Iterated Greedy,13,262111,899792,30,decorrido,0.2,30.0487125,36887,29.982787876,1592,True,ok,
+d935f771d7cb41d982238493aac0c162,amazon0302,Guloso,13,262111,899792,30,decorrido,,2.04132486,39118,2.041321433,1,True,ok,

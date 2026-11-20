@@ -1,0 +1,4 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+3d28a1a7a3e443ac9ba5171bb2a0e1be,p2p-Gnutella05,DemDS,1,8846,31839,20,cpu,,21.044380628,1752,0.235251117,22,True,ok,
+e249b9c6bd954657b5c4ea078ef75409,p2p-Gnutella05,Iterated Greedy,1,8846,31839,20,decorrido,0.2,1.586250033,1757,0.521940942,21,True,ok,
+5fbcc7050ae543c2913f76003a18e174,p2p-Gnutella05,Guloso,1,8846,31839,20,decorrido,,0.038771731,1885,0.038769617,1,True,ok,

@@ -1,0 +1,4 @@
+instancia,algoritmo,sol,tempo,seed,limite_s,tempo_total_s,status
+amazon0302,DemDS,,,13,30.0,1.1072e-05,erro
+amazon0302,Iterated Greedy,36966,29.988551394,13,30.0,30.046557599,ok
+amazon0302,Guloso,39118,2.130933901,13,30.0,2.130939141,ok

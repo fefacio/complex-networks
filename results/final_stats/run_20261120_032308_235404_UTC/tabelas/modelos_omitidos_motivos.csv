@@ -1,0 +1,7 @@
+﻿escopo,resposta,motivo,n
+total,vencedor_solucao,orçamentos distintos; estratifique por limite_s,
+total,vencedor_gap1,classe com menos de dois casos; nenhuma classe foi removida,48.0
+total,gap_otimo_pct,orçamentos distintos; estratifique por limite_s,
+cauda,vencedor_solucao,orçamentos distintos; estratifique por limite_s,
+cauda,vencedor_gap1,classe com menos de dois casos; nenhuma classe foi removida,48.0
+cauda,gap_otimo_pct,orçamentos distintos; estratifique por limite_s,

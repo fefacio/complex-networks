@@ -1,0 +1,101 @@
+{
+  "run_id": "run_20261120_032308_235404_UTC",
+  "python": "3.14.7",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "scikit-learn": "1.9.1"
+  },
+  "results_dir": "/home/fernando/complex-networks/results",
+  "output_dir": "/home/fernando/complex-networks/results/final_stats/run_20261120_032308_235404_UTC",
+  "configuration": {
+    "seed": 42,
+    "alpha": 0.05,
+    "n_permutations": 19999,
+    "n_bootstrap": 1000,
+    "optimal_values_column": "dms",
+    "join_key": "instancia",
+    "cv_unit": "instancia",
+    "min_n_assoc": 8,
+    "min_n_group": 3,
+    "min_n_model": 15,
+    "cv_folds": 5,
+    "tree_max_depth": 3,
+    "tree_min_samples_leaf": 3,
+    "include_ties_in_models": false,
+    "allow_mixed_budgets_models": false,
+    "run_posthoc": true,
+    "importance_repeats": 5,
+    "numeric_features": [
+      "n_nodes",
+      "n_edges",
+      "average_degree",
+      "mean_clustering_degree_gt_1",
+      "clustering_eligible_nodes",
+      "transitivity",
+      "average_shortest_path_length",
+      "diameter",
+      "density",
+      "n_components",
+      "modularity",
+      "fracao_componentes",
+      "fracao_elegiveis_clustering"
+    ],
+    "model_features": [
+      "log1p_n_nodes",
+      "average_degree",
+      "mean_clustering_degree_gt_1",
+      "transitivity",
+      "average_shortest_path_length",
+      "diameter",
+      "log1p_n_components",
+      "modularity"
+    ],
+    "class_targets": [
+      "vencedor_solucao",
+      "vencedor_gap50",
+      "vencedor_gap25",
+      "vencedor_gap10",
+      "vencedor_gap5",
+      "vencedor_gap1"
+    ],
+    "numeric_targets": [
+      "tempo_gap50_s",
+      "tempo_gap25_s",
+      "tempo_gap10_s",
+      "tempo_gap5_s",
+      "tempo_gap1_s",
+      "gap_otimo_pct",
+      "fracao_solucao"
+    ]
+  },
+  "inputs": {
+    "general_metrics.csv": {
+      "bytes": 8113,
+      "sha256": "0199a3cd6db1a7af3705b5373c3f4652accade3589ec85de8c3f1d3fadbd936a"
+    },
+    "mds_gaps_final.csv": {
+      "bytes": 2465,
+      "sha256": "7f8d8b19f80d276db1f48335d399660d022090c9c5bf2bf7473defb498dbf2e5"
+    },
+    "mds_solucoes_final.csv": {
+      "bytes": 2319,
+      "sha256": "6185d0098b392635db9eba6efe2c3ca6867cf2bf7a323f4cba81c97abd768654"
+    },
+    "melhores_tempos_full.csv": {
+      "bytes": 3760,
+      "sha256": "73d32bfb071463079a869d1cc83253bfc2170436433f0a8bb4a00d4ae6ed667e"
+    },
+    "distribuicoes_escolhidas.csv": {
+      "bytes": 21677,
+      "sha256": "83b1f4a3b623afd59700d8df3a785a463f2c61b9b958aa6a07c865bd4004f713"
+    },
+    "otimos.csv": {
+      "bytes": 1142,
+      "sha256": "711f302f7279f217c4c967906361aa737a338deb3cab670f5c5a96b9e258d593"
+    }
+  }
+}

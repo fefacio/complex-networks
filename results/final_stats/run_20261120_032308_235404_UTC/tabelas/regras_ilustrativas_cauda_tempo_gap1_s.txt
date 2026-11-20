@@ -1,0 +1,19 @@
+|--- num__log1p_n_nodes <= 12.70765
+|   |--- num__log1p_n_nodes <= 10.57505
+|   |   |--- num__log1p_n_nodes <= 9.32512
+|   |   |   |--- value: [0.02871]
+|   |   |--- num__log1p_n_nodes >  9.32512
+|   |   |   |--- value: [0.07533]
+|   |--- num__log1p_n_nodes >  10.57505
+|   |   |--- num__average_degree <= 13.20509
+|   |   |   |--- value: [0.47031]
+|   |   |--- num__average_degree >  13.20509
+|   |   |   |--- value: [1.19839]
+|--- num__log1p_n_nodes >  12.70765
+|   |--- num__modularity <= 0.98352
+|   |   |--- num__average_degree <= 10.79948
+|   |   |   |--- value: [1.74485]
+|   |   |--- num__average_degree >  10.79948
+|   |   |   |--- value: [2.62297]
+|   |--- num__modularity >  0.98352
+|   |   |--- value: [4.71172]

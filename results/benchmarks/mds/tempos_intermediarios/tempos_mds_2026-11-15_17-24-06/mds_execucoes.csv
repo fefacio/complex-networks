@@ -1,0 +1,4 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+c694b222075b42058b3793e0671a10e9,gemsec-Facebook-tvshow,DemDS,1,3892,17239,20,cpu,,21.025181736,719,0.023209132,7,True,ok,
+b4a77469b74040c1aa1f7218c18d5452,gemsec-Facebook-tvshow,Iterated Greedy,1,3892,17239,20,decorrido,0.2,0.760649634,722,0.020378203,15,True,ok,
+1dcde4ab94af49468302a29fb21103e4,gemsec-Facebook-tvshow,Guloso,1,3892,17239,20,decorrido,,0.013308499,750,0.013306575,1,True,ok,

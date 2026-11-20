@@ -1,0 +1,12 @@
+Resultados de final_stats.ipynb
+
+base_total.csv e base_cauda.csv: junções sem multiplicar instâncias.
+correlacoes_spearman.csv: rho, p por permutação, Holm, IC e correlação parcial descritiva.
+associacoes_distribuicao_vencedor.csv: V de Cramér e p por permutação.
+comparacoes_grupos_kruskal.csv e comparacoes_pares_cliff.csv: testes e efeitos.
+modelos_validacao_fora_amostra.csv: escores OOF e baseline.
+predicoes_fora_amostra.csv: uma previsão de teste por instância, tarefa e entrada.
+modelos_omitidos_motivos.csv e auditoria_geral.csv: limitações e registros de qualidade.
+testes_todas_familias.csv: Holm adicional sobre o conjunto de testes.
+Figuras de árvores e regras são ilustrativas; avaliação está nos escores OOF.
+Tempos e gaps refletem exclusivamente os resumos fornecidos nos CSVs.

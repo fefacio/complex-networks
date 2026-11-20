@@ -1,0 +1,11 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+e1168d1339ed4d38b0b7f7bdf7233017,p2p-Gnutella30,DemDS,1,36682,88328,120,cpu,,121.149697358,7169,0.142418467,2,True,ok,
+df0d38c3278148a9a77128441398b6b6,p2p-Gnutella30,Iterated Greedy,1,36682,88328,120,decorrido,0.2,1.879120908,7169,0.138463982,5,True,ok,
+91ed0ef9485746499892fd23fda784c8,p2p-Gnutella30,DemDS,2,36682,88328,120,cpu,,121.150589791,7169,0.14482702,2,True,ok,
+49ab6632377f4c69b5d16313a570eb6b,p2p-Gnutella30,Iterated Greedy,2,36682,88328,120,decorrido,0.2,1.610349724,7169,0.150098076,5,True,ok,
+ed4c61f9b35146de8fb7257d76cfa8c5,p2p-Gnutella30,DemDS,3,36682,88328,120,cpu,,121.142512245,7169,0.137497692,2,True,ok,
+eda225a530a34edd8f202a834c7b48e3,p2p-Gnutella30,Iterated Greedy,3,36682,88328,120,decorrido,0.2,1.626055785,7169,0.139295196,5,True,ok,
+ebecc4b282cb4758bf0dc8b0107500fc,p2p-Gnutella30,DemDS,4,36682,88328,120,cpu,,121.144400041,7169,0.147758627,2,True,ok,
+b199c7d6fc264ef28f3f442b194397ed,p2p-Gnutella30,Iterated Greedy,4,36682,88328,120,decorrido,0.2,1.615747696,7169,0.128399674,5,True,ok,
+5ced7f36dbc94e389bf740c0d22e756d,p2p-Gnutella30,DemDS,5,36682,88328,120,cpu,,121.145682956,7169,0.155928129,2,True,ok,
+3ab88acfe396450f956077ce695747c0,p2p-Gnutella30,Iterated Greedy,5,36682,88328,120,decorrido,0.2,1.634984354,7169,0.139844733,5,True,ok,

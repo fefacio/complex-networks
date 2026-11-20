@@ -1,0 +1,8 @@
+﻿arquivo,n_instancias,com_metricas,sem_metricas,metricas_sem_registro
+general_metrics,50,50,0,0
+mds_gaps_final,50,50,0,0
+mds_solucoes_final,50,50,0,0
+melhores_tempos_full,50,50,0,0
+otimos,50,50,0,0
+distribuicao_total,50,50,0,0
+distribuicao_cauda,50,50,0,0

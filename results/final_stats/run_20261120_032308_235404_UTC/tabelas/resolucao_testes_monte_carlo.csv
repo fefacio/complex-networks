@@ -1,0 +1,6 @@
+﻿familia,n_testes,menor_p_monte_carlo,menor_p_holm_na_primeira_rejeicao,n_perm_recomendado_minimo
+spearman,91,5e-05,0.00455,1820
+associacao_categorica,12,5e-05,0.0006,240
+kruskal,26,5e-05,0.0013,520
+pares_cliff,146,5e-05,0.0073,2920
+todas_familias,275,5e-05,0.01375,5500

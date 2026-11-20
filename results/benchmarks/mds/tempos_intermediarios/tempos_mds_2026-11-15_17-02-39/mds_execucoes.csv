@@ -1,0 +1,4 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+927466253620462fa151d5319d178638,amazon0302,DemDS,13,262111,899792,30.0,decorrido,,7.825e-06,,,0,False,erro,TypeError: mds_solver_demds() got an unexpected keyword argument 'time_limit_wall'
+12adf261c3de40d8979ca1e897bde10a,amazon0302,Iterated Greedy,13,262111,899792,30.0,decorrido,0.2,30.052108673,36954,29.994498087,1525,True,ok,
+632e57c3dbb24e68abf7704a259bf78b,amazon0302,Guloso,13,262111,899792,30.0,decorrido,,2.107425864,39118,2.107419902,1,True,ok,

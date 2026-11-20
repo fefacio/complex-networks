@@ -1,0 +1,3 @@
+run_id,instancia,algoritmo,seed,n_nodes,n_edges,limite_s,relogio_limite,beta,tempo_total_s,cardinalidade_final,tempo_ate_melhor_s,n_eventos,valida,status,erro
+839f4827f500406e86afda0932a49624,as-skitter,DemDS,13,1696415,11095298,600,cpu,,614.266986403,182523,551.511502527,2031,True,ok,
+81501fc22fae40f4bbb159fd2cf12761,as-skitter,Iterated Greedy,13,1696415,11095298,600,decorrido,0.2,600.360456193,183730,399.081809641,3708,True,ok,

@@ -1,0 +1,5 @@
+﻿distribuicao,DemDS,Greedy,IG
+lognormal,25,0,3
+power_law,1,0,0
+stretched_exponential,8,0,0
+truncated_power_law,6,1,4
